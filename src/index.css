@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700;900&display=swap');
+
+@font-face {
+	font-family: 'miFuente';
+	src: url('../src/assets/fuentes/2717-font.otf');
+}
+
+@tailwind base;
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		text-decoration: none;
+		outline: none;
+		list-style-type: none;
+	}
+
+	html {
+		font-size: 100%;
+	}
+
+	body {
+		font-family: Inter, sans-serif;
+	}
+
+	h1 {
+		font-family: 'miFuente', Inter, sans-serif;
+		font-weight: 600;
+		font-size: 3.125rem;
+	}
+
+	h2 {
+		font-family: 'miFuente', Inter, sans-serif;
+		font-weight: 700;
+		font-size: 2.5rem;
+	}
+
+	h3 {
+		font-family: 'miFuente', Inter, sans-serif;
+		font-weight: 600;
+		font-size: 1.5rem;
+	}
+
+	p {
+		@apply text-[#878787];
+	}
+
+	.flex-center {
+		@apply flex items-center justify-center;
+	}
+
+	.layout-height {
+		height: calc(100vh - 6rem);
+	}
+
+	.scroll-bar::-webkit-scrollbar {
+		width: 5px;
+		background-color: #fff;
+	}
+
+	.scroll-bar::-webkit-scrollbar-thumb {
+		border-radius: 30px;
+		background: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			from(#e94e35),
+			to(#da1b60)
+		);
+	}
+
+	.scroll-bar::-webkit-scrollbar-track {
+		background: #000;
+		border-radius: 100px;
+	}
+
+	.work-container:hover > .work-box {
+		background: #e94e35;
+	}
+
+	.work-container:hover > div > p {
+		color: #fff;
+	}
+	
+	@keyframes marquee {
+		0% {
+			left: 0;
+		}
+		100% {
+			left: -100%;
+		}
+	}
+	.animate {
+		width: 200%;
+		animation: marquee 8s linear infinite;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+}
+
+@tailwind components;
+@tailwind utilities;
